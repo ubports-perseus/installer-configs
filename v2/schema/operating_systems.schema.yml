@@ -1,4 +1,4 @@
-$schema: "http://json-schema.org/draft-07/schema#"
+$schema: https://json-schema.org/draft/2020-12/schema
 $id: "v2/schema/operating_systems.schema.yml"
 title: Operating systems
 type: "array"
@@ -8,11 +8,20 @@ items:
   title: Operating system
   type: "object"
   description: "An operating system available for installation"
+  required:
+    - "name"
+    - "compatible_installer"
+    - "prerequisites"
+    - "steps"
   properties:
     name:
       title: OS name
       type: "string"
       description: "Human-readable name of the operating system."
+    compatible_installer:
+      title: Compatible Installer
+      type: "string"
+      ubports_semver:
     options:
       $ref: options.schema.yml#
     prerequisites:
@@ -22,6 +31,8 @@ items:
       items:
         type: "string"
         description: "Reference to user_action that's needed before the installation of this OS. Steps required for every OS should be put in the generic unlock block instead."
+        ubports_user-action:
+        ubports_not-in-unlock:
     steps:
       title: Steps
       type: "array"

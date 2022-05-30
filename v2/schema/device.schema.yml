@@ -1,4 +1,4 @@
-$schema: "http://json-schema.org/draft-07/schema#"
+$schema: https://json-schema.org/draft/2020-12/schema
 $id: "v2/schema/device.schema.yml"
 title: "Device"
 description: "Device configuration for the UBports Installer"
@@ -12,6 +12,7 @@ properties:
     title: Codename
     type: "string"
     description: "A short codename that is used internally to identify the device. This (with the extension '.yml') should also be the filename. If there are multiple codenames in use for the exact same device, only create a single one with the most prominent one and add the correct aliases to aliases.json."
+    pattern: ^[^,\s]*$
   formfactor:
     $ref: "formfactor.schema.yml#"
   aliases:
@@ -21,6 +22,7 @@ properties:
     uniqueItems: true
     items:
       type: "string"
+      pattern: ^[^,\s]*$
   doppelgangers:
     title: Doppelgangers
     type: "array"
@@ -28,6 +30,7 @@ properties:
     uniqueItems: true
     items:
       type: "string"
+      pattern: ^[^,\s]*$
   user_actions:
     $ref: "user_actions.schema.yml#"
   handlers:
@@ -46,6 +49,7 @@ properties:
     uniqueItems: true
     items:
       type: "string"
+      ubports_user-action:
   operating_systems:
     $ref: operating_systems.schema.yml#
 required:

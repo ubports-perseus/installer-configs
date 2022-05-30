@@ -40,10 +40,6 @@ user_actions:
     title: "Sideload complete!"
     description: "Follow the on-screen instructions to complete the sideload."
     button: true
-  untested:
-    title: "Untested"
-    description: "Sorry, this configuration has not yet been fully tested. You might run into issues. If you want to help us improve, click the link below to see the config file."
-    button: true
 unlock:
   - "update"
   - "twrp"
@@ -53,6 +49,7 @@ handlers:
       - fastboot:oem_unlock:
 operating_systems:
   - name: "Ubuntu Touch"
+    compatible_installer: ">=0.9.2-beta"
     options:
       - var: "channel"
         name: "Channel"
@@ -63,7 +60,7 @@ operating_systems:
           systemimage:channels:
       - var: "wipe"
         name: "Wipe Userdata"
-        tooltip: "Wipe personal data"
+        tooltip: "Wipe personal data (required for new installs)"
         type: "checkbox"
       - var: "logo"
         name: "Flash Logo"
@@ -131,6 +128,7 @@ operating_systems:
               action: "recovery"
     slideshow: []
   - name: "LineageOS"
+    compatible_installer: ">=0.9.2-beta"
     options:
       - var: "gapps"
         name: "Install OpenGApps"

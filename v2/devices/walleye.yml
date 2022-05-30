@@ -31,6 +31,7 @@ handlers:
       - fastboot:flashing_unlock:
 operating_systems:
   - name: "Ubuntu Touch"
+    compatible_installer: ">=0.9.2-beta"
     options:
       - var: "channel"
         name: "Channel"
@@ -56,15 +57,15 @@ operating_systems:
               files:
                 - url: "https://cdimage.ubports.com/devices/walleye/boot.img"
                   checksum:
-                    sum: "0bab2b4fd28ff20a5df55593ac64b3a8bd8f3e0614c996f7c1da3a3c45865dee"
+                    sum: "b3c54817559580217a137e897174f5c0c59d4b1a682d4e1d12b170d290df6f01"
                     algorithm: "sha256"
                 - url: "https://cdimage.ubports.com/devices/walleye/dtbo.img"
                   checksum:
-                    sum: "24682632b96ce4a0d22a1f1101463a2557f536f9ace9aacfc5195df0a3f07ee5"
+                    sum: "d586b9176cd26663920304c1dc298ca8e894069729b5ef1639dce451baf07160"
                     algorithm: "sha256"
                 - url: "https://cdimage.ubports.com/devices/walleye/vbmeta.img"
                   checksum:
-                    sum: "d2b4a6d059651d1dcb4d6bcb3d586ddc3cb013c7824f3086caa0c748bafa83a7"
+                    sum: "4d541d36eb5017f9c05af49bea55bb763529ab2ec3c79dad4c7748ac343f6b7e"
                     algorithm: "sha256"
         condition:
           var: "bootstrap"
